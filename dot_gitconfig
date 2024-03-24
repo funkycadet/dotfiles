@@ -1,11 +1,25 @@
-[user]
-	name = funkycadet
-	email = ericsmithsonian2@gmail.com
-[credential "https://github.com"]
-	helper = 
-	helper = !/usr/bin/gh auth git-credential
-[credential "https://gist.github.com"]
-	helper = 
-	helper = !/usr/bin/gh auth git-credential
+#[user]
+	#name = funkycadet
+	#email = ericsmithsonian2@gmail.com
+#[credential "https://github.com"]
+	#helper = 
+	#helper = !/usr/bin/gh auth git-credential
+#[credential "https://gist.github.com"]
+	#helper = 
+	#helper = !/usr/bin/gh auth git-credential
 [core]
 	excludesfile = /home/funkycadet/.gitignore
+#[credential]
+	#helper = 
+	#helper = /usr/local/bin/git-credential-manager
+	#credentialStore = plaintext
+[credential "https://dev.azure.com"]
+	useHttpPath = true
+[init]
+	defaultBranch = main
+
+[includeIf "gitdir:~/Documents/"]
+path = ~/Documents/.gitconfig.personal
+
+[includeIf "gitdir:~/panam_projects/"]
+path = ~/panam_projects/.gitconfig.panam

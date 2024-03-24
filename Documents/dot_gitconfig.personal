@@ -1,0 +1,11 @@
+# ~/personal/.gitconfig.pers
+ 
+[user]
+email = ericsmithsonian2@gmail.com
+name = Eric Alaribe
+ 
+[github]
+user = "funkycadet"
+ 
+[core]
+sshCommand = "ssh -i ~/.ssh/funkycadet"

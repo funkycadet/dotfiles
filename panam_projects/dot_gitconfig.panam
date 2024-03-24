@@ -1,0 +1,11 @@
+# ~/work/.gitconfig.work
+ 
+[user]
+email = panampraisehebron@gmail.com
+name = Hebron Praise
+ 
+[github]
+user = "panam-py"
+ 
+[core]
+sshCommand = "ssh -i ~/.ssh/panam_ssh"
