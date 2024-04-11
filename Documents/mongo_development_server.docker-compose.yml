@@ -1,0 +1,41 @@
+services:
+  mongo1:
+    image: mongodb/mongodb-community-server
+    hostname: mongo1
+    container_name: mongo1
+    ports:
+      - 27017:27017
+    entrypoint:
+      ["mongod", "--replSet", "myReplicaSet", "--bind_ip", "localhost,mongo1"]
+    restart: unless-stopped
+
+  mongo2:
+    image: mongodb/mongodb-community-server
+    hostname: mongo2
+    container_name: mongo2
+    ports:
+      - 27018:27017
+    entrypoint:
+      ["mongod", "--replSet", "myReplicaSet", "--bind_ip", "localhost,mongo2"]
+    restart: unless-stopped
+
+  mongo3:
+    image: mongodb/mongodb-community-server
+    hostname: mongo3
+    container_name: mongo3
+    ports:
+      - 27019:27017
+    entrypoint:
+      ["mongod", "--replSet", "myReplicaSet", "--bind_ip", "localhost,mongo3"]
+    restart: unless-stopped
+
+  mongosetup:
+    image: mongodb/mongodb-community-server
+    depends_on:
+      - mongo1
+      - mongo2
+      - mongo3
+    volumes:
+      - .:/scripts
+    restart: "no"
+    entrypoint: ["bash", "/scripts/mongo_setup.sh"]
