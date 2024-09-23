@@ -1,0 +1,60 @@
+// vim:ts=4:sw=4:et
+{
+    // splith split container with 2 children
+    "border": "normal",
+    "floating": "auto_off",
+    "layout": "splith",
+    "marks": [],
+    "percent": null,
+    "type": "con",
+    "nodes": [
+        {
+            "border": "normal",
+            "current_border_width": 2,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 1376,
+               "width": 1280,
+               "x": 0,
+               "y": 0
+            },
+            "marks": [],
+            "name": "An Example Program Using Structs - The Rust Programming Language — Mozilla Firefox",
+            "percent": 0.5,
+            "swallows": [
+               {
+                "class": "^firefox$",
+                "instance": "^Navigator$",
+                "machine": "^thinkpad$",
+                "title": "^An\\ Example\\ Program\\ Using\\ Structs\\ \\-\\ The\\ Rust\\ Programming\\ Language\\ \\—\\ Mozilla\\ Firefox$",
+                "window_role": "^browser$"
+               }
+            ],
+            "type": "con"
+        },
+        {
+            "border": "normal",
+            "current_border_width": 2,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 600,
+               "width": 800,
+               "x": 0,
+               "y": 0
+            },
+            "marks": [],
+            "name": "Zellij (rust_web3) - ericalaribe@thinkpad:~/Documents/web3_projects/starknet_projects/sample_starknet_contract",
+            "percent": 0.5,
+            "swallows": [
+               {
+                "class": "^Alacritty$",
+                "instance": "^Alacritty$",
+                "machine": "^thinkpad$",
+                "title": "^Zellij\\ \\(rust_web3\\)\\ \\-\\ ericalaribe\\@thinkpad\\:\\~\\/Documents\\/web3_projects\\/starknet_projects\\/sample_starknet_contract$"
+               }
+            ],
+            "type": "con"
+        }
+    ]
+}
+

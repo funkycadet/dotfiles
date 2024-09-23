@@ -1,0 +1,12 @@
+[
+  {
+    "command": [
+      "/usr/lib/firefox/firefox-bin"
+    ],
+    "working_directory": "/home/ericalaribe"
+  },
+  {
+    "command": "/usr/bin/alacritty -e zellij attach rust_web3",
+    "working_directory": "/home/ericalaribe"
+  }
+]

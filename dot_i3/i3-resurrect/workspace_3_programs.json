@@ -1,0 +1,20 @@
+[
+  {
+    "command": [
+      "/usr/lib/firefox/firefox-bin"
+    ],
+    "working_directory": "/home/ericalaribe"
+  },
+  {
+    "command": "/usr/bin/alacritty -e zellij attach pharmanager",
+    "working_directory": "/home/ericalaribe"
+  },
+  {
+    "command": [
+      "/snap/code/169/usr/share/code/code",
+      "--no-sandbox",
+      "--force-user-env"
+    ],
+    "working_directory": "/home/ericalaribe"
+  }
+]

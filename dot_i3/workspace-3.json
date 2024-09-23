@@ -1,0 +1,83 @@
+{
+    // tabbed split container with 3 children
+    "border": "normal",
+    "floating": "auto_off",
+    "layout": "tabbed",
+    "marks": [],
+    "percent": 1,
+    "type": "con",
+    "nodes": [
+        {
+            "border": "normal",
+            "current_border_width": 2,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 1376,
+               "width": 1280,
+               "x": 26,
+               "y": 27
+            },
+            "marks": [],
+            "name": "Prescriptions – Figma — Mozilla Firefox",
+            "percent": 0.333333333333333,
+            "swallows": [
+               {
+                "class": "^firefox$",
+                "instance": "^Navigator$",
+                "machine": "^thinkpad$",
+                "title": "^Prescriptions\\ \\–\\ Figma\\ \\—\\ Mozilla\\ Firefox$",
+                "window_role": "^browser$"
+               }
+            ],
+            "type": "con"
+        },
+        {
+            "border": "normal",
+            "current_border_width": 2,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 1385,
+               "width": 2556,
+               "x": 2,
+               "y": 26
+            },
+            "marks": [],
+            "name": "staff.controller.ts - pharmanager-backend - Visual Studio Code",
+            "percent": 0.333333333333333,
+            "swallows": [
+               {
+                "class": "^Code$",
+                "instance": "^code$",
+                "machine": "^thinkpad$",
+                "title": "^staff\\.controller\\.ts\\ \\-\\ pharmanager\\-backend\\ \\-\\ Visual\\ Studio\\ Code$",
+                "window_role": "^browser\\-window$"
+               }
+            ],
+            "type": "con"
+        },
+        {
+            "border": "normal",
+            "current_border_width": 2,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 600,
+               "width": 800,
+               "x": 0,
+               "y": 0
+            },
+            "marks": [],
+            "name": "Zellij (pharmanager) - ericalaribe@thinkpad:~/Documents/side-gigs_project/pharmanager-backend",
+            "percent": 0.333333333333333,
+            "swallows": [
+               {
+                "class": "^Alacritty$",
+                "instance": "^Alacritty$",
+                "machine": "^thinkpad$",
+                "title": "^Zellij\\ \\(pharmanager\\)\\ \\-\\ ericalaribe\\@thinkpad\\:\\~\\/Documents\\/side\\-gigs_project\\/pharmanager\\-backend$"
+               }
+            ],
+            "type": "con"
+        }
+    ]
+}
+
