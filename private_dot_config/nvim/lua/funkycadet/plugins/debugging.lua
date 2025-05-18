@@ -1,25 +1,83 @@
-return {
-	"mfussenegger/nvim-dap",
-	dependencies = {
-		"rcarriga/nvim-dap-ui",
-	},
-	config = function()
-		local dap, dapui = require('dap'), require('dapui')
+-- config = function()
+-- 		local dap = require('dap')
+--     local dapui = require('dapui')
 
-		dap.listeners.before.attach.dapui_config = function()
-			dapui.open()
-		end
-		dap.listeners.before.launch.dapui_config = function()
-			dapui.open()
-		end
-		dap.listeners.before.event_terminated.dapui_config = function()
-			dapui.close()
-		end
-		dap.listeners.before.event_exited.dapui_config = function()
-			dapui.close()
-		end
+--     require("dapui").setup()
+--     require("dap").setup()
 
-		vim.keymap.set('n', '<Leader>db', dap.toggle_breakpoint, {})
-		vim.keymap.set('n', '<Leader>dc', dap.continue, {})
-	end,
-}
+--         require("dap-vscode-js").setup({
+--             adapters = { 'node-terminal', 'pwa-chrome', 'pwa-msedge', 'node-terminal', 'pwa-extensionHost' },
+--         })
+
+--         for _, language in ipairs({ "typescript", "javascript" }) do
+--             require("dap").configurations[language] = {
+--                 {
+--                     type = "node-terminal",
+--                     request = "launch",
+--                     name = "Launch file",
+--                     program = "${file}",
+--                     cwd = vim.fn.getcwd(),
+--                     sourceMaps = true,
+--                     protocol = "inspector",
+--                     console = "integratedTerminal",
+--                     internalConsoleOptions = "neverOpen",
+--                     skipFiles = { "<node_internals>/**" },
+--                 },
+--                 {
+--                     type = "node-terminal",
+--                     request = "attach",
+--                     name = "Attach",
+--                     processId = dap.utils.pick_process,
+--                     cwd = "${workspaceFolder}",
+--                 },
+--                 {
+--                     type = "node-terminal",
+--                     request = "launch",
+--                     name = "Launch Mocha tests",
+--                     runtimeExecutable = "node",
+--                     runtimeArgs = {"./node_modules/mocha/bin/mocha.js",},
+--                     rootpath = "${workspaceFolder}",
+--                     cwd = "${workspaceFolder}",
+--                     console = "integratedTerminal",
+--                     internalConsoleOptions = "neverOpen",
+--                 },
+--             }
+--         end
+
+-- 		dap.listeners.before.attach.dapui_config = function()
+-- 			dapui.open()
+-- 		end
+-- 		dap.listeners.before.launch.dapui_config = function()
+-- 			dapui.open()
+-- 		end
+-- 		dap.listeners.before.event_terminated.dapui_config = function()
+-- 			dapui.close()
+-- 		end
+-- 		dap.listeners.before.event_exited.dapui_config = function()
+-- 			dapui.close()
+-- 		end
+
+--         -- dap.listeners.after.event_initialized["dapui_config"] = function()
+--         --     dapui.open()
+--         -- end
+--         -- dap.listeners.after.event_terminated["dapui_config"] = function()
+--         --     dapui.close()
+--         -- end
+--         -- dap.listeners.after.event_exited["dapui_config"] = function()
+--         --     dapui.close()
+--         -- end
+
+
+-- 		-- vim.keymap.set("n", "<Leader>cc", dap.toggle_breakpoint, {})
+-- 		-- vim.keymap.set("n", "<Leader>cd", dap.continue, {})
+--     -- -- Key mappings
+--     --     vim.keymap.set("n", "<leader>rb", dap.toggle_breakpoint, { desc = "Toggle Breakpoint" })
+--     --     vim.keymap.set("n", "<leader>rc", dap.continue, { desc = "Start/Continue Debugging" })
+--         -- vim.keymap.set("n", "<leader>fd", function()
+--         --     dapui.toggle({})
+--         -- end, { desc = "Toggle DAP UI" })
+--   --
+--       -- vim.keymap.set('n', '<Leader>rc', function() require('dap').continue() end)
+--       -- vim.keymap.set('n', '<Leader>rb', function() require('dap').toggle_breakpoint() end)
+-- end
+
