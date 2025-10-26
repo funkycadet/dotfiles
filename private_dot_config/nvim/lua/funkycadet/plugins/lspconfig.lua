@@ -60,90 +60,108 @@
 
 
 -- Set up lspconfig.
-local capabilities = require('cmp_nvim_lsp').default_capabilities()
+-- local capabilities = require('cmp_nvim_lsp').default_capabilities()
+-- capabilities.offsetEncoding = { "utf-8" }
 
--- Common on_attach function with buffer validation
-local function on_attach(client, bufnr)
-  if not vim.api.nvim_buf_is_valid(bufnr) then
-    return
-  end
-  -- Optional: Enable inlay hints if using Neovim 0.10+ (disabled for now to avoid errors)
-  if vim.lsp.inlay_hint then
-    vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
-  end
-end
+-- -- Common on_attach function with buffer validation
+-- local function on_attach(client, bufnr)
+--   if not vim.api.nvim_buf_is_valid(bufnr) then
+--     return
+--   end
+--   -- Optional: Enable inlay hints if using Neovim 0.10+ (disabled for now to avoid errors)
+--   if vim.lsp.inlay_hint and vim.lsp.inlay_hint.enable then
+--     vim.lsp.inlay_hint.enable(bufnr, true)
+--     -- vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
+--   end
+--   -- Optional: semantic tokens
+--   if client.server_capabilities.semanticTokensProvider and vim.lsp.semantic_tokens then
+--     vim.lsp.semantic_tokens.start(bufnr, client.id)
+--   end
+-- end
 
--- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
-require('lspconfig')['rust_analyzer'].setup {
-  capabilities = capabilities,
-  on_attach = on_attach,
-}
-
-require('lspconfig').pyright.setup {
-  capabilities = capabilities,
-  on_attach = on_attach,
-  settings = {
-    pyright = {
-      disableOrganizeImports = true,
-    },
-    python = {
-      analysis = {
-        ignore = { '*' },
-        -- typeCheckingMode = "off",
-        -- autoImportCompletions = true,
-        -- useLibraryCodeForTypes = true,
-        -- diagnosticMode = "workspace",
-      },
-    },
-  },
-}
-
--- Setup Cairo to work with neovim
-require('lspconfig')['cairo_ls'].setup {
-  cmd = { "scarb-cairo-language-server", "/C", "--node-ipc" },
-  init_options = {
-    hostInfo = "neovim"
-  },
-  capabilities = capabilities,
-  on_attach = on_attach,
-}
-
-require('lspconfig')['ts_ls'].setup {
-  capabilities = capabilities,
-  on_attach = on_attach,
-}
-
-require('lspconfig').clangd.setup {
-  capabilities = capabilities,
-  cmd = { "clangd", "--background-index", "--completion-style=bundled", "--header-insertion=iwyu" },
-  filetypes = { "c", "cpp", "objc", "objcpp" },
-  root_dir = require("lspconfig.util").root_pattern("compile_commands.json", ".git") or vim.loop.cwd,
-  on_attach = on_attach,
-}
-
--- require('lspconfig').ruff.setup {
---   init_options = {
---     settings = {
---       -- Ruff language server settings go here
---     }
---   }
+-- -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
+-- require('lspconfig')['rust_analyzer'].setup {
+--   capabilities = capabilities,
+--   on_attach = on_attach,
 -- }
 
-require('lspconfig').ruff.setup {
-  capabilities = capabilities,
-  on_attach = on_attach,
-  -- init_options = {
-    settings = {
-      ruff = {
-      logLevel = 'info',
-    }
-  }
-}
--- vim.lsp.enable('ruff')
--- require('lspconfig').ruff.setup({
+-- -- require('lspconfig').pyright.setup {
+-- --   capabilities = capabilities,
+-- --   on_attach = on_attach,
+-- --   settings = {
+-- --     pyright = {
+-- --       disableOrganizeImports = true,
+-- --     },
+-- --     python = {
+-- --       analysis = {
+-- --         ignore = { '*' },
+-- --         -- typeCheckingMode = "off",
+-- --         -- autoImportCompletions = true,
+-- --         -- useLibraryCodeForTypes = true,
+-- --         -- diagnosticMode = "workspace",
+-- --       },
+-- --     },
+-- --   },
+-- -- }
+
+
+
+-- -- Setup Cairo to work with neovim
+-- require('lspconfig')['cairo_ls'].setup {
+--   cmd = { "scarb-cairo-language-server", "/C", "--node-ipc" },
+--   init_options = {
+--     hostInfo = "neovim"
+--   },
+--   capabilities = capabilities,
+--   on_attach = on_attach,
+-- }
+
+-- require('lspconfig')['ts_ls'].setup {
+--   capabilities = capabilities,
+--   on_attach = on_attach,
+-- }
+
+-- require('lspconfig').clangd.setup {
+--   capabilities = capabilities,
+--   cmd = { "clangd", "--background-index", "--completion-style=bundled", "--header-insertion=iwyu" },
+--   filetypes = { "c", "cpp", "objc", "objcpp" },
+--   root_dir = require("lspconfig.util").root_pattern("compile_commands.json", ".git") or vim.loop.cwd,
+--   on_attach = on_attach,
+-- }
+
+-- -- require('lspconfig').ruff.setup {
+-- --   init_options = {
+-- --     settings = {
+-- --       -- Ruff language server settings go here
+-- --     }
+-- --   }
+-- -- }
+
+-- -- require('lspconfig').ruff.setup {
+-- --   capabilities = capabilities,
+-- --   on_attach = on_attach,
+-- --   -- init_options = {
+-- --     settings = {
+-- --       ruff = {
+-- --       logLevel = 'info',
+-- --     }
+-- --   }
+-- -- }
+-- --
+
+
+
+-- vim.lsp.config('ruff', {
+--   capabilities = capabilities,
+--   on_attach = on_attach,
 --   init_options = {
 --     settings = {
---       -- Ruff language server settings go here
+--       logLevel = 'info'
 --     }
 --   }
 -- })
+
+-- vim.lsp.enable('pyright')
+-- vim.lsp.enable('ruff')
+-- vim.lsp.enable('ty')
+

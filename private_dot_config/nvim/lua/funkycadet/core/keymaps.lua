@@ -6,6 +6,9 @@ local keymap = vim.keymap -- for conciseness
 ---------------------
 -- General Keymaps -------------------
 
+-- Toggle paste mode
+-- keymap.set("n", "<F2>", ":set paste!<CR>", { desc = "Toggle paste mode" })
+
 -- use jk to exit insert mode
 keymap.set("i", "jk", "<ESC>", { desc = "Exit insert mode with jk" })
 keymap.set("n", "<leader>q", "<cmd>qa!<CR>", { desc = "Quit" }) -- quit

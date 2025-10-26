@@ -1,4 +1,4 @@
-require("copilot").setup({})
+-- require("copilot").setup({})
 
 -- return {
 --   "zbirenbaum/copilot.lua",

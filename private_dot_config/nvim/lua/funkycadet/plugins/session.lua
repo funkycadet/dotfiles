@@ -2,10 +2,13 @@
 -- require("auto-session").setup {
 -- 	suppressed_dirs = { "~/", "~/Pictures", "~/Downloads", "/"},
 -- }
+-- Recommended session options for auto-session
+vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
 
+-- auto-session setup
 require('auto-session').setup {
   log_level = 'error',
-  auto_session_suppress_dirs = { '~/', '~/Pictures', '~/Downloads', '/' },
+  suppressed_dirs = { '~/', '~/Pictures', '~/Downloads', '/' },
   -- Delay LSP attachment
   post_restore_cmds = {
     function()

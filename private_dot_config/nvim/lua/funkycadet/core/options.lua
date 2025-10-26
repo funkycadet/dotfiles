@@ -1,5 +1,12 @@
 vim.cmd("let g:netrw_liststyle = 3")
 
+-- vim.provider
+vim.cmd("let g:loaded_node_provider = 0")
+vim.cmd("let g:loaded_perl_provider = 0")
+vim.cmd("let g:loaded_ruby_provider = 0")
+-- vim.lsp.set_log_level("debug")
+vim.diagnostic.config({ virtual_text = true })
+
 local opt = vim.opt -- for conciseness
 
 -- line numbers
@@ -19,6 +26,7 @@ opt.wrap = false -- disable line wrapping
 -- search settings
 opt.ignorecase = true -- ignore case when searching
 opt.smartcase = true -- if you include mixed case in your search, assumes you want case-sensitive
+opt.incsearch = true
 
 -- cursor line
 opt.cursorline = false -- highlight the current cursor line
@@ -43,3 +51,5 @@ opt.splitbelow = true -- split horizontal window to the bottom
 
 -- turn off swapfile
 opt.swapfile = false
+
+

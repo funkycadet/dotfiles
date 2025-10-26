@@ -74,7 +74,7 @@ require('luasnip.loaders.from_vscode').lazy_load({ include = { 'python', 'typesc
 cmp.setup({
   snippet = {
     expand = function(args)
-      require('luasnip').lsp_expand(args.body) -- Use LuaSnip
+      luasnip.lsp_expand(args.body) -- Use LuaSnip
     end,
   },
   window = {
@@ -108,6 +108,8 @@ cmp.setup({
     end, { 'i', 's' }),
   }),
   sources = cmp.config.sources({
+    -- { name = 'lspconfig' },
+    -- { name = 'new_lspconfig' },
     { name = 'nvim_lsp' },
     { name = 'luasnip' }, -- Use LuaSnip
     { name = 'buffer' },

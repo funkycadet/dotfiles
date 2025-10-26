@@ -1,9 +1,11 @@
 local telescope = require('telescope')
 telescope.setup {
   defaults = {
-    file_ignore_patterns = { "node_modules", "^.git/", "dist" },
+    file_ignore_patterns = { "node_modules", "^.git/", "dist", "next", ".next", "venv", "env", "dev", ".env", ".venv" },
+    -- file_ignore_patterns = { "node_modules" },
     hidden = true,
     follow = true,
+    color_devicons = true,
   },
   extensions = {
     file_browser = {
@@ -16,7 +18,7 @@ telescope.setup {
     },
     live_grep = {
       additional_args = function()
-        return { "--hidden", "--no-ignore"}
+        return { '--one-file-system', '--iglob', '!.git', "--hidden", "--no-ignore"}
       end
     }
   }
